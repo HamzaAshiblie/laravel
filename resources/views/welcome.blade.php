@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Welcome Hamza
+    Welcome Hamza hi
 @endsection
 
 @section('content')
