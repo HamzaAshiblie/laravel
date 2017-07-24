@@ -25,7 +25,7 @@ class PostController extends Controller
         }
         return redirect()->route('dashboard')->with([
 		'message'=>$message,
-		'user'=>$posts->first()->user->first_name
+		'user'=>$post->first()->user->first_name
 		]);
     }
 	public function getDeletePost($post_id)

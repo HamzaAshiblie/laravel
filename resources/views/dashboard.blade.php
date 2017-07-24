@@ -20,9 +20,7 @@
             <header><h3>What other people say?</h3></header>
 			@foreach($posts as $post)
 				<article class="post">
-					<p>
-					{{$post->body}}
-					</p>
+					<p>{{$post->body}}</p>
 					<div class="info">
 						Posted by {{$post->user->first_name}} on {{$post->created_at}}
 					</div>
