@@ -29,6 +29,14 @@ Route::get('/logout',[
     'uses'=>'UserController@getLogout',
     'as'=> 'logout'
 ]);
+Route::get('/account',[
+    'uses'=>'UserController@getAccount',
+    'as'=> 'account'
+]);
+Route::post('/updateaccount',[
+    'uses'=>'UserController@postSaveAccount',
+    'as'=> 'account.save'
+]);
 Route::get('/dashboard',[
     'uses'=>'PostController@getDashboard',
     'as'=> 'dashboard',
@@ -43,5 +51,9 @@ Route::get('/delete-post/{post_id}', [
 	'uses'=>'PostController@getDeletePost',
 	'as'=>'post.delete',
     'middleware'=> 'auth'
+]);
+Route::post('/edit',[
+    'uses'=> 'PostController@postEditPost',
+    'as'=> 'edit'
 ]);
 
