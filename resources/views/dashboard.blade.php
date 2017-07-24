@@ -27,11 +27,11 @@
 						Posted by {{$post->user->first_name}} on {{$post->created_at}}
 					</div>
 					<div class="interaction">
-						<a href="#" id="test">Like</a>|
+						<a href="#">Like</a>|
 						<a href="#">Disike</a>
 						@if(Auth::user()==$post->user)
 						|
-						<a href="#">Edit</a>|
+						<a href="#" class="edit" id="test">Edit</a>|
 						<a href="{{route('post.delete', ['post_id'=>$post->id])}}">Delete</a>
 					
 						@endif
@@ -52,7 +52,16 @@
         <h4 class="modal-title">Edit Post</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        <form>
+			<div class="form-group">
+				<label for="post-body">
+					Edit The Post
+				</label>
+				<textarea class="form-control" name="post-body" id="post-body" rows="5">
+					
+				</textarea>
+			</div>
+		</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
