@@ -31,6 +31,11 @@ $('.like').on('click', function(event){
 		data:{isLike: isLike, postId: postId, _token: token}
 	})
 		.done(function() {
-			//change page
+			event.target.innerText = isLike ? event.target.innerText =='Like'? 'You Like this':'Like': event.target.innerText == 'Dislike'? 'You dislike this': 'Dislike';
+			if(isLike){
+                event.target.nextElementSibling.innerText = 'Dislike';
+            }else {
+                event.target.previousElementSibling.innerText = 'Like'
+            }
 		});
 });
